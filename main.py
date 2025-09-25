@@ -16,7 +16,8 @@ def createAgent(request: CreateAgentRequest):
         agent = client.agents.create_agent(
             model = request.model,
             name = request.name,
-            instructions = request.instructions
+            instructions = request.instructions,
+            tools=request.tools
         )
 
         if (agent.id):
